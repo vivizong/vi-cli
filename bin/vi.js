@@ -15,12 +15,13 @@ program
   .version(pkg.version,'-v, -V, --version','输出当前版本')
   .usage('<command> [options] <appName>')
   .option("-c, --clone", "使用 git clone")
+  .helpOption('-h, --help','帮助信息')
   .on("--help", () => {
     console.log();
     console.log("Examples:");
     console.log();
     console.log(
-      chalk.gray("  # create a new react project")
+      chalk.gray("  # create a new project")
     );
     console.log("  $ vi-cli create demo");
     console.log();
@@ -57,7 +58,10 @@ program
         }
       })
     }
-});
+  })
+program
+  .addHelpCommand(false)
+  
 
 
 
